@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Retrait</h2>
+<form method="POST" action="{{ url_for('withdraw') }}">
+    <input type="text" name="receiver_number" placeholder="Numéro de réception" required>
+    <input type="password" name="password" placeholder="Mot de passe pour confirmer" required>
+    <input type="number" name="amount" placeholder="Montant (min 2000 FC)" required>
+    <button type="submit">Retirer</button>
+</form>
+{% endblock %}

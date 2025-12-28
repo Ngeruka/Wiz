@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Bienvenue sur Wiz App</h2>
+<p>Le meilleur réseau social avec système de paiement, messagerie et parrainage.</p>
+<a href="{{ url_for('register') }}">Créer un compte</a> | 
+<a href="{{ url_for('login') }}">Connexion</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Messagerie</h2>
+<div class="messages">
+    {% for msg in messages %}
+    <div class="card">
+        <strong>{{ msg.sender }} :</strong> {{ msg.text }}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

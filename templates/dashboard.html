@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Tableau de bord</h2>
+<div class="feed">
+    {% for post in posts %}
+    <div class="card">
+        <p>{{ post.description }}</p>
+        {% if post.image_path %}
+            <img src="{{ url_for('static', filename='img/' ~ post.image_path) }}" alt="image" style="width:100%;">
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

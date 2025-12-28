@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Paiement pour activer votre compte</h2>
+<form method="POST" action="{{ url_for('payment') }}">
+    <input type="number" name="amount" placeholder="Montant (minimum 2000 FC)" required>
+    <button type="submit">Payer</button>
+</form>
+{% endblock %}
