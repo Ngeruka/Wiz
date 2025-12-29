@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Profil</h2>
-<p>Nom : {{ user.username }}</p>
-<p>Téléphone : {{ user.phone }}</p>
+<h2>Profil de {{ user.username }}</h2>
+<p>Email : {{ user.email }}</p>
+<p>Parrainage : {{ user.referral }}</p>
 <p>Thème choisi : {{ user.theme }}</p>
+
+<h3>Changer le thème</h3>
+<select onchange="setTheme(this.value)">
+  <option value="white" {% if user.theme == 'white' %}selected{% endif %}>Blanc</option>
+  <option value="black" {% if user.theme == 'black' %}selected{% endif %}>Noir</option>
+  <option value="blue" {% if user.theme == 'blue' %}selected{% endif %}>Bleu</option>
+  <option value="multi" {% if user.theme == 'multi' %}selected{% endif %}>Multicolor</option>
+</select>
 {% endblock %}

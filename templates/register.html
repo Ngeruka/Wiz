@@ -2,16 +2,16 @@
 {% block content %}
 <h2>Créer un compte</h2>
 <form method="POST" action="{{ url_for('register') }}">
-    <input type="text" name="username" placeholder="Nom complet" required>
-    <input type="text" name="phone" placeholder="Numéro de téléphone" required>
-    <input type="password" name="password" placeholder="Mot de passe" required>
-    <input type="text" name="invite_code" placeholder="Code parrainage (ex: NGRK1234567)">
-    <select name="theme">
-        <option value="theme-default">Classique</option>
-        <option value="theme-dark">Noir</option>
-        <option value="theme-blue">Bleu</option>
-        <option value="theme-multi">Multicolor</option>
-    </select>
-    <button type="submit">S’inscrire</button>
+  <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Mot de passe" required>
+  <input type="text" id="referral" name="referral" readonly>
+  <select name="theme">
+    <option value="white">Blanc</option>
+    <option value="black">Noir</option>
+    <option value="blue">Bleu</option>
+    <option value="multi">Multicolor</option>
+  </select>
+  <button type="submit">S’inscrire</button>
 </form>
 {% endblock %}

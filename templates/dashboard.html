@@ -1,14 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Tableau de bord</h2>
-<div class="feed">
-    {% for post in posts %}
-    <div class="card">
-        <p>{{ post.description }}</p>
-        {% if post.image_path %}
-            <img src="{{ url_for('static', filename='img/' ~ post.image_path) }}" alt="image" style="width:100%;">
-        {% endif %}
-    </div>
-    {% endfor %}
-</div>
+
+<h3>Mes publications</h3>
+<table>
+  <tr><th>Date</th><th>Contenu</th></tr>
+  {% for post in posts %}
+  <tr>
+    <td>{{ post.date }}</td>
+    <td>{{ post.content }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h3>Messages récents</h3>
+<div id="messages"></div>
+
+<h3>Fil d'actualité</h3>
+<div id="feed"></div>
 {% endblock %}

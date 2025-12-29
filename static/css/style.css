@@ -1,0 +1,80 @@
+/* === Reset / base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { text-decoration: none; color: inherit; }
+
+/* === Header / Navigation === */
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a { margin: 0 10px; color: #fff; }
+
+/* === Theme colors === */
+body.theme-black { background-color: #111; color: #eee; }
+body.theme-white { background-color: #fff; color: #222; }
+body.theme-blue { background-color: #1e3a8a; color: #fff; }
+body.theme-multi {
+  background: linear-gradient(135deg, #ff0080, #ff8c00, #40e0d0);
+  color: #fff;
+}
+
+/* === Forms === */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+form input, form select, form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+form button {
+  background-color: #1e3a8a;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* === Placeholder images === */
+img.placeholder {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+/* === Fullscreen === */
+.container {
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  padding: 20px;
+}
+
+/* === Tables / Dashboard === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+table, th, td { border: 1px solid #ccc; }
+th, td { padding: 10px; text-align: center; }

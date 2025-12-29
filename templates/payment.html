@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Paiement pour activer votre compte</h2>
+<h2>Activation de compte</h2>
+<p>Pour activer votre compte, veuillez effectuer le paiement.</p>
 <form method="POST" action="{{ url_for('payment') }}">
-    <input type="number" name="amount" placeholder="Montant (minimum 2000 FC)" required>
-    <button type="submit">Payer</button>
+  <input type="text" name="payment_number" placeholder="Numéro de paiement" required>
+  <input type="number" name="amount" placeholder="Montant à payer" required>
+  <button type="submit">Payer et activer</button>
 </form>
 {% endblock %}

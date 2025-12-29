@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Administration</h2>
+
+<h3>Gestion des paiements</h3>
+<form method="POST" action="{{ url_for('update_payment_number') }}">
+  <input type="text" name="payment_number" placeholder="Nouveau numéro de paiement">
+  <button type="submit">Mettre à jour</button>
+</form>
+
+<h3>Activer / Désactiver les retraits</h3>
+<form method="POST" action="{{ url_for('toggle_withdraw') }}">
+  <select name="withdraw_status">
+    <option value="open">Ouvrir</option>
+    <option value="close">Fermer</option>
+  </select>
+  <button type="submit">Confirmer</button>
+</form>
+
+<h3>Bonus & prix de boule</h3>
+<form method="POST" action="{{ url_for('update_bonus') }}">
+  <input type="number" name="bonus" placeholder="Nouveau bonus">
+  <input type="number" name="price_per_ball" placeholder="Prix par boule">
+  <button type="submit">Mettre à jour</button>
+</form>
+
+<h3>Retraits en attente</h3>
+<table>
+  <tr><th>Utilisateur</th><th>Montant</th><th>Numéro de réception</th><th>Action</th></tr>
+  {% for w in withdrawals %}
+  <tr>
+    <td>{{ w.user }}</td>
+    <td>{{ w.amount }}</td>
+    <td>{{ w.payment_number }}</td>
+    <td>
+      <form method="POST" action="{{ url_for('confirm_withdraw', id=w.id) }}">
+        <button type="submit">Confirmer</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

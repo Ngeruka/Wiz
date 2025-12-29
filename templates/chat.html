@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Messagerie</h2>
-<div class="messages">
-    {% for msg in messages %}
-    <div class="card">
-        <strong>{{ msg.sender }} :</strong> {{ msg.text }}
-    </div>
-    {% endfor %}
+<div id="chat-box">
+  {% for msg in messages %}
+  <p><strong>{{ msg.sender }}:</strong> {{ msg.text }}</p>
+  {% endfor %}
 </div>
+<form method="POST" action="{{ url_for('send_message') }}">
+  <input type="text" name="message" placeholder="Écrire un message" required>
+  <button type="submit">Envoyer</button>
+</form>
 {% endblock %}
